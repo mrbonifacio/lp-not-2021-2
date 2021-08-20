@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let num1 = Number(prompt('Informe o primeiro número:'))
+let num2 = parseFloat(prompt('Informe o segundo número:'))
+let oper = prompt('Informe o operador:')
+
+//validação dos números 
+if(isNaN(num1) || isNaN(num2)){
+    alert('ERRO:não e possivel efetuar aritmética com os valores informados')
+}
+else{
+    switch(oper){
+        case '+':
+            document.write(num1 + num2)
+break
+            case '-':
+            document.write(num1 - num2)
+break
+            case '*':
+                case 'X':
+                    case 'x':
+            document.write(num1 * num2)
+break
+            case '/':
+                case ':':
+            document.write(num1 / num2)
+break        
+            default:
+                alert('ERRO')
+    }
+}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
