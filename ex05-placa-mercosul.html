@@ -31,6 +31,64 @@
             Em seguida, usando a estrutura de decisão switch..case, informe ao usuário 
             a letra correspondente ao dígito informado.
         */
+       let num = Number(prompt('Informe um número de 1 a 9: '))
+       let letra
+
+       do{
+        num = Number(prompt('Informe um número de 1 a 9: '))
+        }   while(isNaN(num) || num > 9)
+
+       if(isNaN(num)){
+           alert('ERRO:Informe um número inteiro de 1 a 9')
+       }
+       if(num > 9){
+           alert('ERRO:Informe um número entre 1 e 9')
+       }
+
+       switch(num){
+        case '0':
+               alert('Letra = A')
+               break
+
+           case '1':
+               alert('Letra = B')
+               break
+
+           case '2':
+               alert('Letra = C')
+               break
+
+               case '3':
+               alert('Letra = D')
+               break
+
+               case '4':
+               alert('Letra = E')
+               break
+
+               case '5':
+               alert('Letra = F')
+               break
+
+               case '6':
+               alert('Letra = G')
+               break
+
+               case '7':
+               alert('Letra = H')
+               break
+
+               case '8':
+               alert('Letra = I')
+               break
+
+               case '9':
+               alert('Letra = J')
+               break
+
+               default:
+                   alert('ERRO:você nâo informou um valor correspondente de 1 a 9:')
+       }
     </script>
 </head>
 <body>
