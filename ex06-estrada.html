@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+    <script>
+         let comp 
+       
+
+       do{
+        comp = parseInt(prompt(' Informe o comprimento da rodovia ,um número inteiro maior que 200: '))
+        }   while(isNaN(comp) ||  comp <= 200 ){
+            alert(' ERRO:   Informe um número inteiro maior que 200: ')
+        }
+
+        let km = 0 
+        while(km <= comp){
+            if(km % 31 === 0)
+            document.write(`O km ${km} tem um pedágio<br>`)
+        }
+        if(km % 23 === 0){
+            document.write(`O km ${km} tem um posto de atendimento ao usuário<br>`)
+
+        }
+    km++ 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
