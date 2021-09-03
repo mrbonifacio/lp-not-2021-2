@@ -14,7 +14,7 @@
         }   while(isNaN(comp) ||  comp <= 200 ){
             alert(' ERRO:   Informe um número inteiro maior que 200: ')
         }
-
+/*
         let km = 0 
         while(km <= comp){
             if(km % 31 === 0)
@@ -25,6 +25,17 @@
 
         }
     km++ 
+    */
+   for(let km = 1; km <= comp; km++){
+       if(km % 31 === 0){
+           document.write('o km ' + km + 'tem pedagio<br>')
+
+       }
+       if(km % 23 === 0){
+        document.write('o km ' + km + 'tem um ponto de atendimento ao usuario<br>')
+       }
+   }
+
     </script>
 </head>
 <body>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop for</title>
+    <script>
+        //anatomia de loop for em javascript
+         /*
+            Dentro dos parênteses do loop for, há TRÊS BLOCOS
+            separadOs entre si por PONTO E VÍRGULA:
+            1) INICIALIZAÇÃO: é onde a variável de controle do
+               loop ganha seu valor inicial. A variável pode,
+               inclusive, ser declarada neste bloco. É executado
+               apenas uma vez.
+            2) CONDIÇÃO: o loop será executado enquanto a condição
+               se mantiver verdadeira. É reavaliada a cada iteração
+               (volta) do loop.
+            3) INCREMENTO: neste bloco, o valor da variável de controle
+               é ajustado (normalmente com incremento de 1 unidade), o
+               que provoca a reavaliação da condição.
+        */
+        //contagem de 1 a 10 
+        for(let i = 1;  i <= 10; i++){
+            document.write(i + '<br>')
+        }
+        //trço em html 
+        document.write('<br>')
+
+
+    //contagem regressiva de 10 a 1 
+    let x
+    for(let x = 10; x >= 1; x--){
+        document.write(x + '<br>')
+    }
+    document.write('O valor de x é ' + x)
+
+    //trço em html 
+    document.write('<hr>')
+
+    //contagem de 1 a 100 saltando  de 3 em 3 
+    for(let i = 1; i<= 100; i+= 3){
+        document.write(i + '<br>')
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
