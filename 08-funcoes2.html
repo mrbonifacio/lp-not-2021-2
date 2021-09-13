@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções 2</title>
+    <script>
+        function calcArea(base,altura,tipo){
+            let area
+
+            switch(tipo){
+                case 'R':
+                    area = base * altura 
+                    break
+                    case 'T':
+                    area = base * altura / 2
+                    break
+                    case 'E':
+                    area = (base/2) * (altura/2) * Math.PI 
+                    break
+
+                    default:
+                        area = null
+            }
+            return area
+        }
+         // Chamadas à função
+         document.write(`Retângulo de 10x15: ${calcArea(10, 15, 'R')}<br>`)
+
+let y = 20, x = 12, t = 'T'
+document.write(`Triângulo de 12x20: ${calcArea(x, y, t)}<br>`)
+
+do {
+    x = Number(prompt('Informe o valor da base:'))
+} while(isNaN(x) || x <= 0)
+
+do {
+    y = Number(prompt('Informe o valor da altura:'))
+} while(isNaN(y) || y <= 0)
+
+do {
+    t = prompt('Informe o tipo de forma (R, T ou E):')
+} while(t !== 'R' && t !== 'T' && t !== 'E')
+
+document.write(`A área da forma ${t} de ${x}x${y} é ${calcArea(x, y, t)}<br>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

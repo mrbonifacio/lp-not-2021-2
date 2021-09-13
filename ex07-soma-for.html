@@ -9,18 +9,28 @@
         let num1, num2 
 
         do{
-            num1 = number(prompt('Digite o primeiro numero: '))
-            num2 = number(prompt('Digite o segundo numero: '))
-        }while(isnan(num1) || isnan(num2))
+            num1 = parseInt(prompt('Digite o primeiro numero: '))
+           
+        }while(isnan(num1))
+        do{
+            num1 = parseInt(prompt('Digite o segundo numero diferente do primeiro: '))
+           
+        }while(isnan(num2) || num2 === num1)
 
-        let i = 0
-        let res
-
-        for(i = num1; i<= num2; i++){
-            res = res + 1
+        if(num1 > num2){
+            maior=num1
+            menor=num2
+        }
+        else{
+            maior=num2
+            menor=num1
+        }
+        let = i
+        for(let i=menor;i<=maior;i++){
+            soma+=i
         }
 
-        alert('a soma dos numeros é: ' +res)
+        alert('a soma dos numeros é: ' +soma)
     </script>
 </head>
 <body>

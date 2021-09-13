@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+    <script>
+        /*
+  Peça ao usuário que informe um número inteiro maior que 1 e
+  implemente um for que calcule o valor do fatorial dele,
+  começando o cálculo pelo próprio número e terminando em 1.
+  Exemplos:
+  5! = 5 * 4 * 3 * 2 * 1
+  7! = 7 * 6 * 5 * 4 * 3 * 2 * 1         
+*/
+let num
+do{
+    num = parseInt(prompt('Informe um numero inteiro maior que 1: '))
+}while(isNaN(num)|| num <= 1)
+
+let fatorial=1
+for(let i = num; i > 1; i--){
+    fatorial *= i
+}
+document.write(`${num}! é igual a ${fatorial}`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

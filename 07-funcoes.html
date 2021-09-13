@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+    <script>
+        let num ,fatorial
+
+    //calculando fatorial de 5 
+    num = 5
+        fatorial = 1
+for(let i = num; i > 1; i--){
+    fatorial *= i
+}
+document.write(`${num}! é igual a ${fatorial}.<br>`)
+
+/***************************/
+ 
+num = 8
+        fatorial = 1
+for(let i = num; i > 1; i--){
+    fatorial *= i
+}
+document.write(`${num}! é igual a ${fatorial}.<br>`)
+
+/**************************
+ * PRINCIPIO DRY = don't repeat yourself
+*/
+//Declaração de função 
+function calcFatorial(num){
+   
+   let fatorial = 1
+for(let i = num; i > 1; i--){
+    fatorial *= i
+}
+return fatorial
+}
+
+let fat4 = calcFatorial(4)
+document.write(`4! é igual a ${fat4}.<br>`)
+document.write(`6! é igual a ${calcFatorial(6)}.<br>`)
+document.write(`A raiz quadrada de 3 é ${Math.sqrt(3)}.<br>`)
+
+
+let int 
+
+do{
+    int = prompt('Informe um numero inteiro maior que 1: ')
+
+}while(isnan(int)|| int <= 1)
+
+document.write(`${int}! é igual a ${calcFatorial(int)}.<br>`)
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
