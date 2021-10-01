@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document Object Model (DOM)</title>
+    </head>
+    <body>
+        <h1>Document Object Model (DOM)</h1>
+
+        <!--
+            O id é um atributo que identifica unicamente um elemento
+            dentro da página. Portanto, dois elementos não podem ter
+            o mesmo id.
+            O id pode ser adicionado a qualquer elemento.
+        -->
+        <ol id="estados">
+            <li id="sp">São Paulo</li>
+            <li id="mg">Minas Gerais</li>
+            <li id="rj">Rio de Janeiro</li>
+            <li id="es">Espírito Santo</li>
+        </ol>
+
+        <script>
+            /* Manipulação do DOM */
+
+            // 1) Capturar o elemento HTML e colocá-lo dentro de uma
+            // variável JavaScript
+            let titulo1 = document.querySelector('h1')
+
+            // 2) Alterar o conteúdo textual do elemento
+            titulo1.textContent = 'Estados da Região Sudeste'
+
+            // Capturar mais um elemento
+            let item = document.querySelector('li') // Captura o 1º <li>
+            item.style.color = 'red'
+
+            // Captura TODOS os elementos <li> dentro de um vetor
+            let itens = document.querySelectorAll('li')
+
+            // Troca a cor do TERCEIRO item
+            itens[2].style.color = 'blue'
+
+            // Capturando um elemento pelo seu id - existem duas formas
+            
+            let itemMg = document.getElementById('mg') // Forma clássica
+            itemMg.style.color = 'green'
+
+            // Forma moderna - note que é necessário colocar o # antes do id
+            let itemEs = document.querySelector('#es')
+            itemEs.style.fontWeight = 'bold'
+
+            let listaOrd = document.querySelector('#estados')
+            // Muda o marcador da lista para letras maiúsculas
+            listaOrd.style.listStyleType = 'upper-alpha'
+
+        </script>
+    </body>
+</html>
