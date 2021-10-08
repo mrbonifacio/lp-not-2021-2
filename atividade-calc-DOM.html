@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DOM</title>
+</head>
+
+<body>
+    <h1>Calculadora DOM</h1>
+    <div>
+        <label for="num1">Informe o primeiro número</label>
+        <input id="num1" type="number"> 
+    </div>
+    <div>
+        <label for="calc">Cálculo</label>
+        <select  id="calc">
+            <option>(Selecione)</option>
+            <option>Soma(+)</option>
+            <option>Subtração(-)</option>
+            <option>Multiplicação(*)</option>
+            <option>Divisão(/)</option>
+        </select>
+    </div>
+    <div>
+        <label for="num2">Informe o segundo número</label>
+        <input id="num2" type="number"> 
+    </div>
+   
+    <div>
+        <button id="Calcular">Calcular </button>
+    </div>
+    <div id="resultado"></div>
+
+    <script>
+
+        const number1 = document.getElementById('num1')
+        const calculador = document.querySelector('calc')
+        const number2 = document.getElementById('num2')
+       
+        function validar(){
+             if(number1.value === ''){
+             alert('ERRO: Insira o primeiro número')
+             number1.focus()
+             return false
+             }
+
+        if(number2.value === ''){
+        alert('ERRO: Insira o segundo número')
+        number2.focus()
+        return false
+        }
+
+        if(calculador.selectedIndex <= 0){
+            alert('Selecione o operador')
+            calculador.focus()
+            return false 
+        }
+        
+        return true
+    }
+
+    function montarcalc(){
+
+        if(validar()){
+
+            let simbolcalc = ''
+            switch(calculador.selectedIndex){
+                case 1:
+                    simbolcalc = 'Soma(+)'
+                    
+break
+                    case 2:
+                    simbolcalc = 'Subtração(-)'
+                    
+break
+                    case 3:
+                    simbolcalc = 'Multiplicação(*)'
+                   
+break
+                    case 4:
+                    simbolcalc = 'Divisão(/)'
+                    
+break
+
+default: 
+            alert('ERRO')
+            }
+           
+        }
+
+    }
+   
+    </script>
+</body>
+
+</html>
