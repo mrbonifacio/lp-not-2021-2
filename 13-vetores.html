@@ -118,6 +118,68 @@
         //usando splice()
             carros.splice(2, 1, 'Santana' )
             document.write(carros + '<br>')
+            
+             /******************************************************
+         * PERCURSOS DE VETOR
+         * Percorrer um vetor significa "visitar" cada um dos seus
+         * elementos e fazer algo com ele.
+         * ***************************************************/
+
+        // 1ª forma de percurso: for tradicional
+        for(let i = 0; i < carros.length; i++) {
+            // Exibir cada um dos carros em letras maiúsculas
+            document.write(carros[i].toUpperCase() + '<br>')
+        }
+
+        document.write('<hr>')
+
+        // 2ª forma de percurso: for tradicional em ordem reversa
+        for(let i = carros.length - 1; i >= 0; i--) {
+            // Exibir cada um dos carros em letra minúscula
+            document.write(carros[i].toLowerCase() + '<br>')
+        }
+
+        document.write('<hr>')
+
+        // 3ª forma: for..of
+        // Esta forma SEMPRE percorre o vetor INTEIRO em ordem CRESCENTE
+        for(let c of carros) {
+            // Exibindo o nome dos carros entre colchetes
+            document.write('[' + c + ']<br>')
+        }
+
+        document.write('<hr>')
+
+        for(let fruta of frutas) {
+            document.write(fruta.toUpperCase() + '<br>')
+        }
+
+        document.write('<hr>')
+
+        // 4ª forma: forEach()
+        // forEach() executa uma função para cada elemento do vetor
+        frutas.forEach(function(fruta) {
+            document.write(fruta.toLowerCase() + '<br>')
+        })
+
+        document.write('<hr>')
+
+        /**************************************************/
+
+        // Verificando a posição de um valor em um vetor: indexOf()
+        // Retorna a posição no vetor, caso exista ou -1, se não existir
+        document.write(`Posição de "Santana" em carros: ${carros.indexOf('Santana')}<br>`)
+
+        document.write(`Posição de "melancia" em frutas: ${frutas.indexOf('melancia')}<br>`)
+
+        document.write(`Posição de "Opala" em carros: ${carros.indexOf('Opala')}<br>`)    
+        
+        /*******************************************************/
+
+        // Verificando se um valor existe ou não no vetor: includes
+        // Retorna true caso exista, false se não existir
+        document.write(`"Maverick" existe em carros? ${carros.includes('Maverick')}<br>`)
+        document.write(`"laranja" existe em frutas? ${frutas.includes('laranja')}<br>`)
 
 
 
