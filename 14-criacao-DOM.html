@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de novos elementos no DOM</title>
+</head>
+<body>
+    <h1>Estados da região Nordeste</h1>
+
+    <ol id="estados" type="a">
+        <li id="al">Alagoas</li>
+        <li id="ce">Ceará</li>
+    </ol>
+
+    <!--p>A região Nordeste possui nove estados.</p-->
+
+    <script>
+
+        // Capturar o elemento correspondente à lista
+        const lista = document.querySelector('#estados')
+
+        /**************************************************
+         * Para adicionar novos elementos HTML a uma página
+         * usando JavaScript, são necessárias DUAS ETAPAS.
+        ***************************************************/
+
+        // PRIMEIRA ETAPA: a criação propriamente dita do elemento.
+        // Essa tarefa cabe ao PROPRIETÁRIO (owner), que é sempre
+        // o document. Isso é feito com uma chamada a
+        // document.createElement().
+        const itemPB = document.createElement('li')
+
+        // Ajustando algumas propriedades do novo elemento
+        itemPB.id = 'pb'
+        itemPB.textContent = 'Paraíba'
+
+        // SEGUNDA ETAPA: o novo elemento precisa ser associado
+        // a um pai. Uma das formas de um pai "adotar" um elemento
+        // como filho é usando appendChild().
+        lista.appendChild(itemPB)
+
+        /**********************************************/
+
+        // Primeira etapa
+        const itemPE = document.createElement('li')
+
+        itemPE.id = 'pe'
+        itemPE.textContent = 'Pernambuco'
+        itemPE.style.color = 'deeppink'
+
+        // Segunda etapa
+        lista.appendChild(itemPE)
+
+        /*********************************************/
+
+        // Primeira etapa
+        const parag = document.createElement('p')
+
+        parag.textContent = 'A região Nordeste possui nove estados.'
+
+        // Segunda etapa
+        document.body.appendChild(parag)
+
+        /********************************************/
+
+        // Primeira etapa
+        const itemSE = document.createElement('li')
+
+        itemSE.id = 'se'
+        itemSE.textContent = 'Sergipe'
+        itemSE.style.fontStyle = 'italic'
+
+        // Segunda etapa
+        lista.appendChild(itemSE)
+
+        /********************************************/
+
+        // Primeira etapa
+        const itemRN = document.createElement('li')
+
+        itemRN.id = 'rn'
+        itemRN.textContent = 'Rio Grande do Norte'
+        itemRN.style.fontVariant = 'small-caps'
+
+        // Para controlar a posição onde um novo elemento será
+        // inserido, usamos insertBefore(). Este método necessita
+        // que um outro elemento seja especificado como referencial
+        // de localização do ponto de inserção.
+
+        // Ordem dos parâmetros
+        // 1º: o novo elemento
+        // 2º: o elemento de referência, ANTES do qual o novo será inserido
+        lista.insertBefore(itemRN, itemSE)
+
+        /********************************************/
+
+        // Primeira etapa
+        const itemBA = document.createElement('li')
+
+        itemBA.id = 'ba'
+        itemBA.textContent = 'Bahia'
+        itemBA.style.color = 'blue'
+
+        // Segunda etapa, usando insertBefore()
+        lista.insertBefore(itemBA, document.querySelector('#ce'))
+
+        /*********************************************/
+
+        // Primeira etapa
+        const mapa = document.createElement('img')
+
+        mapa.src = 'imagens/mapa-ne.jpg'
+        // Transforma em elemento do tipo bloco
+        mapa.style.display = 'block'
+        // 20px top e bottom, automático nas laterais left e right
+        mapa.style.margin = '20px auto'
+
+        // Segunda etapa, usando insertBefore()
+        // document.body.insertBefore(mapa, document.querySelector('h1'))
+
+        // Segunda etapa, usando prepend() porque o mapa
+        // passará a ser o primeiro filho de body
+        document.body.prepend(mapa)
+
+        /**********************************************/
+
+        // Primeira etapa
+        const itemMA = document.createElement('li')
+
+        itemMA.textContent = 'Maranhão'
+
+        // Segunda etapa
+        lista.insertBefore(itemMA, itemPB)
+
+        /***********************************************/
+
+        // Primeira etapa
+        const itemPI = document.createElement('li')
+
+        itemPI.textContent = 'Piauí'
+
+        // Segunda etapa
+        lista.insertBefore(itemPI, itemRN)
+
+    </script>
+    
+</body>
+</html>
