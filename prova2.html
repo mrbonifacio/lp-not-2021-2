@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Tabuada</title>
+
+    <style>
+        * {
+            font-family: 'Amaranth', 'Candara', Arial, sans-serif;
+        }
+
+        html,
+        body {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-size: 12pt;
+            line-height: 18pt;
+            color: #444;
+        }
+
+        body {
+            background-color: darkslateblue;
+            background-image: linear-gradient(indigo 50%, darkslateblue);
+            background-repeat: no-repeat;
+            padding: 0;
+        }
+
+        body>div {
+            background: whitesmoke;
+            margin: 3%;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            color: darkslateblue;
+            text-shadow: 2px 2px 2px rgba(27, 94, 32, 0.5);
+
+        }
+
+        div>div {
+            padding: 10px;
+            width: 70%;
+            max-width: 90%;
+            min-width: 250px;
+            margin: 1% auto;
+            text-align: center;
+        }
+
+        div label {
+            display: block;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 8px;
+            border-radius: 8px;
+            color: white;
+            background-color: darkslateblue;
+        }
+
+        p {
+            width: 30%;
+            margin: 0 auto;
+        }
+
+        div div:last-of-type {
+            background-color: #c8e6c9;
+            border-radius: 12px;
+        }
+    </style>  
+
+</head>
+
+<body>
+
+    <div>
+        <h1>Tabuada</h1>
+
+        <div>
+            <label>Escolha um número para visualizar a tabuada:</label>
+            <select>
+               <option>(Selecione)</option>
+               <option>1</option>
+               <option>2</option>
+               <option>3</option>
+               <option>4</option>
+               <option>5</option>
+               <option>6</option>
+               <option>7</option>
+               <option>8</option>
+               <option>9</option>
+            </select>
+        </div>
+
+        <div>
+            <button>Visualizar!</button>
+        </div>
+
+        <div id="tabuada"></div>
+    </div>
+
+    <script>
+
+        // A seção "script" precisa ser movida para o final da seção "body"
+        // porque haverá manipulação de DOM
+            
+        const multipl = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+        // 3. Com JavaScript, faça a captura dos elementos HTML que julgar necessários.
+        const tabuada = document.querySelector('#tabuada')
+        const cxSelecao = document.querySelector('select')
+        const botao = document.querySelector('button')
+
+        // 4. Declare uma função que receba como parâmetro um número inteiro. Dentro   
+        // dessa função, o vetor multipl (já existente no código; não deve ser modificado) 
+        // deve serpercorrido usando um loop for.
+
+        function montarTabuada(num) {
+
+            // 5. Dentro do loop for, crie um novo parágrafo e coloque, dentro de sua
+            // propriedade textContent, a linha correspondente da tabuada, isto é, a x b = c, 
+            // onde: a é o númerorecebido como parâmetro pela função; b é o elemento da 
+            // vez do vetor multipl; e c é o resultado da multiplicação de a por b.
+
+            // O for precisará ser invertido porque os números multiplicadores dentro do
+            // vetor multipl estão em ordem descrescente
+            for(let i = multipl.length - 1; i >= 0; i--) {
+                // Cria um novo parágrafo
+                let parag = document.createElement('p') 
+                
+                // Coloca a linha da tabuada dentro do parágrafo
+                parag.textContent = `${num} x ${multipl[i]} = ${num * multipl[i]}`
+
+                // 6. Ainda dentro do loop for, insira o novo parágrafo criado 
+                // como filho do elemento cujo id é tabuada.
+                tabuada.appendChild(parag)
+            }
+
+        }
+
+        // 7. Declare uma outra função que
+        function exibirTabuada() {
+            // a) ajuste o valor do textContent do elemento tabuada para uma string vazia;
+            tabuada.textContent = ''
+
+            // b) verifique se o usuário realmente efetuou a seleção de um número 
+            // válido da caixa de seleção;
+            if(cxSelecao.selectedIndex <= 0) {
+                alert('Selecione um número para exibir a tabuada!')
+                cxSelecao.focus()
+            }
+            // c) caso tenha passado na validação, efetue uma chamada à função
+            // declarada no passo 4, passando a ela o número escolhido pelo 
+            // usuário na lista
+            else {
+                montarTabuada(cxSelecao.selectedIndex)
+            }
+        }
+
+        // 8. Associe a função declarada no passo 7 ao evento clique do 
+        // botão existente na página.
+        botao.addEventListener('click', exibirTabuada)
+
+    </script>
+
+</body>
+
+</html>           
